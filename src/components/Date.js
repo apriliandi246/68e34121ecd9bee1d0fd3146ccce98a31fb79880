@@ -32,6 +32,23 @@ const dates = [
    },
 ];
 
+export default function Date() {
+   return (
+      <React.Fragment>
+         <Container>
+            {dates.map((date) => (
+               <Dates key={Math.random()}>
+                  <p className="day">{date.day}</p>
+                  <p className="date">{date.date}</p>
+               </Dates>
+            ))}
+         </Container>
+
+         <Line />
+      </React.Fragment>
+   );
+}
+
 const Container = styled.div`
    width: 100%;
    display: flex;
@@ -62,20 +79,3 @@ const Line = styled.hr`
    margin-top: 20px;
    border: 1px solid #f1f1f2;
 `;
-
-export default function Date() {
-   return (
-      <React.Fragment>
-         <Container>
-            {dates.map((date) => (
-               <Dates key={Math.random()}>
-                  <p className="day">{date.day}</p>
-                  <p className="date">{date.date}</p>
-               </Dates>
-            ))}
-         </Container>
-
-         <Line />
-      </React.Fragment>
-   );
-}

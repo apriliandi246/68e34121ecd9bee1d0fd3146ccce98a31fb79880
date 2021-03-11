@@ -1,32 +1,5 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-   left: 50%;
-   top: 94.2%;
-   width: 93%;
-   padding: 13px;
-   display: flex;
-   position: fixed;
-   border-radius: 5px;
-   background-color: #a23530;
-   justify-content: space-between;
-   transform: translate(-50%, -50%);
-`;
-
-const FoodItems = styled.div`
-   color: #ffffff;
-   font-family: Arial, Helvetica, sans-serif;
-
-   h1 {
-      font-weight: bold;
-      margin-bottom: 4px;
-   }
-
-   p {
-      font-size: 14px;
-   }
-`;
-
 export default function Cart() {
    return (
       <Container>
@@ -61,3 +34,30 @@ export default function Cart() {
       </Container>
    );
 }
+
+const Container = styled.div`
+   left: 50%;
+   top: 94.2%;
+   width: 93%;
+   padding: 13px;
+   display: flex;
+   position: fixed;
+   border-radius: 5px;
+   background-color: #a23530;
+   justify-content: space-between;
+   transform: translate(-50%, -50%);
+`;
+
+const FoodItems = styled.div`
+   color: #ffffff;
+   font-family: Arial, Helvetica, sans-serif;
+
+   h1 {
+      font-weight: bold;
+      margin-bottom: 4px;
+   }
+
+   p {
+      font-size: 14px;
+   }
+`;

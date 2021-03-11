@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export default function ButtonTime() {
+   return (
+      <Container>
+         <button className="lunch-btn">Lunch</button>
+         <button className="dinner-btn">Dinner</button>
+      </Container>
+   );
+}
+
 const Container = styled.div`
    width: 100%;
    display: flex;
@@ -31,14 +40,3 @@ const Container = styled.div`
       font-family: Arial, Helvetica, sans-serif;
    }
 `;
-
-function ButtonTime() {
-   return (
-      <Container>
-         <button className="lunch-btn">Lunch</button>
-         <button className="dinner-btn">Dinner</button>
-      </Container>
-   );
-}
-
-export default ButtonTime;

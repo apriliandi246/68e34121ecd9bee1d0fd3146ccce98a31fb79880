@@ -26,7 +26,7 @@ const CardDesc = styled.div`
    .card__rating {
       display: flex;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
    }
 
    .card__rating-number {
@@ -45,6 +45,7 @@ const CardDesc = styled.div`
       color: #424749;
       font-size: 18px;
       font-weight: bold;
+      line-height: 23px;
       margin-bottom: 9px;
       font-family: Arial, Helvetica, sans-serif;
    }
@@ -72,13 +73,21 @@ const CardDesc = styled.div`
    .card__add-btn {
       border: none;
       outline: none;
+      display: flex;
       color: #ffffff;
       font-size: 18px;
-      padding: 8px 30px;
+      padding: 7px 29px;
       font-weight: bold;
       border-radius: 5px;
+      align-items: center;
       background-color: #f9423a;
       font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .card__add-icon {
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 5px;
    }
 `;
 
@@ -162,7 +171,9 @@ export default function App() {
 
             <div className="card__footer">
                <p className="card__price">Rp 35,0000</p>
-               <button className="card__add-btn">ADD +</button>
+               <button className="card__add-btn">
+                  ADD <span className="card__add-icon">+</span>
+               </button>
             </div>
          </CardDesc>
       </Card>
