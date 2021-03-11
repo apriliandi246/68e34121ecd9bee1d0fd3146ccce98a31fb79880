@@ -103,6 +103,7 @@ const Container = styled.div`
    width: 100%;
    height: 100%;
    position: fixed;
+   backdrop-filter: blur(0.8px);
    animation: ${animation} 0.2s;
    background-color: rgba(0, 0, 0, 0.3);
    font-family: Arial, Helvetica, sans-serif;
@@ -110,25 +111,27 @@ const Container = styled.div`
 
 const SearchLocation = styled.div`
    width: 100%;
-   height: 800px;
+   height: 900px;
    padding: 20px;
-   margin-top: 145px;
+   margin-top: 175px;
    background-color: #ffffff;
    border-radius: 10px 10px 0px 0px;
 `;
 
 const CloseModal = styled.span`
+   float: right;
    margin-top: 5px;
    font-size: 26px;
+   cursor: pointer;
    font-weight: bold;
-   margin-left: 300px;
+   margin-right: 5px;
+   font-family: Ubuntu;
    display: inline-block;
-   font-family: system-ui;
 `;
 
 const ModalTitle = styled.h1`
    font-size: 20px;
-   margin-top: 30px;
+   margin-top: 50px;
    line-height: 28px;
 `;
 
@@ -137,15 +140,15 @@ const InputSearch = styled.input`
    outline: none;
    padding: 12px;
    font-size: 17px;
-   margin-top: 23px;
+   margin-top: 25px;
    border-radius: 4px;
-   margin-bottom: 30px;
+   margin-bottom: 35px;
    border: 2px solid #f1f1f2;
 `;
 
 const ResultLocation = styled.div`
    display: flex;
-   margin-bottom: 24px;
+   margin-bottom: 25px;
 
    svg {
       margin-right: 12px;
@@ -166,5 +169,6 @@ const ResultLocation = styled.div`
    hr {
       margin-top: 10px;
       border: 1px solid #f1f1f2;
+      background-color: #f1f1f2;
    }
 `;

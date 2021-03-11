@@ -1,100 +1,9 @@
 import styled from "styled-components";
-import food from "../img/NUSA by Betawi Corner.jpeg";
 
-const Card = styled.div`
-   width: 100%;
-   margin-bottom: 32px;
-   border-radius: 0px 0px 9px 9px;
-   box-shadow: 0px 8px 10px 0px rgba(10, 31, 68, 0.1);
-
-   img {
-      width: 100%;
-      height: auto;
-      border-radius: 9px 9px 0px 0px;
-   }
-`;
-
-const CardDesc = styled.div`
-   padding: 20px;
-   margin-top: 5px;
-
-   .card__rating-logo {
-      width: 100px;
-      height: 80px;
-   }
-
-   .card__rating {
-      display: flex;
-      align-items: center;
-      margin-bottom: 18px;
-   }
-
-   .card__rating-number {
-      color: #6e7679;
-      font-size: 18px;
-      margin-right: 10px;
-      font-family: Arial, Helvetica, sans-serif;
-   }
-
-   .card__rating-star {
-      display: flex;
-      align-items: center;
-   }
-
-   .card__food-name {
-      color: #424749;
-      font-size: 18px;
-      font-weight: bold;
-      line-height: 23px;
-      margin-bottom: 9px;
-      font-family: Arial, Helvetica, sans-serif;
-   }
-
-   .card__food-by {
-      color: #6e7679;
-      font-size: 16px;
-      font-family: Arial, Helvetica, sans-serif;
-   }
-
-   .card__footer {
-      display: flex;
-      margin-top: 22px;
-      align-items: center;
-      justify-content: space-between;
-   }
-
-   .card__price {
-      color: #424749;
-      font-size: 18px;
-      font-weight: bold;
-      font-family: Arial, Helvetica, sans-serif;
-   }
-
-   .card__add-btn {
-      border: none;
-      outline: none;
-      display: flex;
-      color: #ffffff;
-      font-size: 18px;
-      padding: 7px 29px;
-      font-weight: bold;
-      border-radius: 5px;
-      align-items: center;
-      background-color: #f9423a;
-      font-family: Arial, Helvetica, sans-serif;
-   }
-
-   .card__add-icon {
-      font-size: 24px;
-      font-weight: bold;
-      margin-left: 5px;
-   }
-`;
-
-export default function App() {
+export default function Card({ food }) {
    return (
-      <Card>
-         <img src={food} alt="food" />
+      <CardContainer>
+         <img src={food.urlImg} alt={food.name} />
 
          <CardDesc>
             <div className="card__rating">
@@ -166,16 +75,108 @@ export default function App() {
                </div>
             </div>
 
-            <h1 className="card__food-name">NUSA by Betawi Corner</h1>
+            <h1 className="card__food-name">{food.name}</h1>
             <p className="card__food-by">by Kulina .Lunch</p>
 
             <div className="card__footer">
-               <p className="card__price">Rp 35,0000</p>
+               <p className="card__price">{food.price}</p>
                <button className="card__add-btn">
                   ADD <span className="card__add-icon">+</span>
                </button>
             </div>
          </CardDesc>
-      </Card>
+      </CardContainer>
    );
 }
+
+const CardContainer = styled.div`
+   width: 100%;
+   border-radius: 9px;
+   margin-bottom: 32px;
+   border: 1px solid #f1f1f2;
+   box-shadow: 0px 8px 10px 0px rgba(10, 31, 68, 0.1);
+
+   img {
+      width: 100%;
+      height: auto;
+      border-radius: 9px 9px 0px 0px;
+   }
+`;
+
+const CardDesc = styled.div`
+   padding: 20px;
+   margin-top: 5px;
+
+   .card__rating-logo {
+      width: 100px;
+      height: 80px;
+   }
+
+   .card__rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+   }
+
+   .card__rating-number {
+      color: #6e7679;
+      font-size: 18px;
+      margin-right: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .card__rating-star {
+      display: flex;
+      align-items: center;
+   }
+
+   .card__food-name {
+      color: #424749;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 23px;
+      margin-bottom: 9px;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .card__food-by {
+      color: #6e7679;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .card__footer {
+      display: flex;
+      margin-top: 22px;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   .card__price {
+      color: #424749;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .card__add-btn {
+      border: none;
+      outline: none;
+      display: flex;
+      color: #ffffff;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 7px 29px;
+      font-weight: bold;
+      border-radius: 5px;
+      align-items: center;
+      background-color: #f9423a;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .card__add-icon {
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 5px;
+   }
+`;

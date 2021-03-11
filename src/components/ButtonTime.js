@@ -1,42 +1,61 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 export default function ButtonTime() {
+   const [activeButton, setActiveButton] = useState("lunch");
+
    return (
-      <Container>
-         <button className="lunch-btn">Lunch</button>
-         <button className="dinner-btn">Dinner</button>
+      <Container active={activeButton}>
+         <button className="lunch-btn" onClick={() => setActiveButton("lunch")}>
+            Lunch
+         </button>
+
+         <button
+            className="dinner-btn"
+            onClick={() => setActiveButton("dinner")}
+         >
+            Dinner
+         </button>
       </Container>
    );
 }
 
+const activeBtn = `
+   border: none;
+   color: #ffffff;
+   background-color: #424749;
+`;
+
+const notActive = `
+   color: #6e7679;
+   background-color: #ffffff;
+   border: 1px solid #f1f1f2;
+`;
+
 const Container = styled.div`
    width: 100%;
    display: flex;
-   margin-top: 20px;
-   margin-bottom: 40px;
+   margin-top: 18px;
+   margin-bottom: 60px;
    justify-content: center;
 
-   .lunch-btn {
-      border: none;
+   button {
       outline: none;
-      color: #ffffff;
+      cursor: pointer;
       font-size: 18px;
       padding: 7px 58px;
-      background-color: #424749;
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
       font-family: Arial, Helvetica, sans-serif;
    }
 
+   .lunch-btn {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      ${(props) => (props.active === "lunch" ? activeBtn : notActive)};
+   }
+
    .dinner-btn {
-      outline: none;
-      color: #6e7679;
-      font-size: 18px;
-      padding: 7px 58px;
-      border: 1px solid #f1f1f2;
-      background-color: #ffffff;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
-      font-family: Arial, Helvetica, sans-serif;
+      ${(props) => (props.active === "dinner" ? activeBtn : notActive)};
    }
 `;

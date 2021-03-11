@@ -1,3 +1,4 @@
+import { mediaQueries } from "../utils/utils";
 import styled from "styled-components";
 
 export default function Cart() {
@@ -41,11 +42,13 @@ const Container = styled.div`
    width: 93%;
    padding: 13px;
    display: flex;
+   opacity: 0.94;
    position: fixed;
    border-radius: 5px;
    background-color: #a23530;
    justify-content: space-between;
    transform: translate(-50%, -50%);
+   ${mediaQueries}
 `;
 
 const FoodItems = styled.div`

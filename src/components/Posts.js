@@ -1,6 +1,20 @@
-import React from "react";
 import styled from "styled-components";
+import { foods } from "../utils/utils";
 import Card from "./Card";
+
+export default function Post() {
+   return (
+      <>
+         <TitleDate>Kamis. 13 Maret 2019</TitleDate>
+
+         <Container>
+            {foods.map((food) => (
+               <Card key={food.name} food={food} />
+            ))}
+         </Container>
+      </>
+   );
+}
 
 const Container = styled.div`
    width: 100%;
@@ -17,21 +31,3 @@ const TitleDate = styled.h1`
    margin-bottom: 18px;
    font-family: Arial, Helvetica, sans-serif;
 `;
-
-function App() {
-   return (
-      <React.Fragment>
-         <TitleDate>Kamis. 13 Maret 2019</TitleDate>
-
-         <Container>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-         </Container>
-      </React.Fragment>
-   );
-}
-
-export default App;

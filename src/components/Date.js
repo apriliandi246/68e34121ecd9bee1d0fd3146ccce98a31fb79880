@@ -1,43 +1,13 @@
 import React from "react";
+import { dates } from "../utils/utils";
 import styled from "styled-components";
-
-const dates = [
-   {
-      day: "SEN",
-      date: 10,
-   },
-   {
-      day: "SEL",
-      date: 11,
-   },
-   {
-      day: "RAB",
-      date: 12,
-   },
-   {
-      day: "KAM",
-      date: 13,
-   },
-   {
-      day: "JUM",
-      date: 14,
-   },
-   {
-      day: "SAB",
-      date: 15,
-   },
-   {
-      day: "MIN",
-      date: 16,
-   },
-];
 
 export default function Date() {
    return (
       <React.Fragment>
          <Container>
             {dates.map((date) => (
-               <Dates key={Math.random()}>
+               <Dates key={Math.random()} date={date.date}>
                   <p className="day">{date.day}</p>
                   <p className="date">{date.date}</p>
                </Dates>
@@ -54,6 +24,19 @@ const Container = styled.div`
    display: flex;
    margin-top: 30px;
    overflow-x: scroll;
+   align-items: center;
+
+   @media only screen and (min-width: 910px) {
+      overflow-x: inherit;
+      justify-content: center;
+   }
+`;
+
+const activeDate = `
+   font-weight: bold;
+   border-radius: 50%;
+   background-color: #424749;
+   padding: 10px 15.3px 10px 15.3px;
 `;
 
 const Dates = styled.div`
@@ -62,20 +45,22 @@ const Dates = styled.div`
    padding-inline: 30px;
    flex-direction: column;
    font-family: Arial, Helvetica, sans-serif;
+   ${(props) => props.date === 11 && activeDate}
 
    .day {
-      color: #6e7679;
       font-size: 12px;
       margin-bottom: 5px;
+      color: ${(props) => (props.date === 11 ? "#ffffff;" : "#6e7679;")};
    }
 
    .date {
-      color: #424749;
       font-weight: bold;
+      color: ${(props) => (props.date === 11 ? "#ffffff;" : "#6e7679;")};
    }
 `;
 
 const Line = styled.hr`
    margin-top: 20px;
+   background-color: #f1f1f2;
    border: 1px solid #f1f1f2;
 `;
