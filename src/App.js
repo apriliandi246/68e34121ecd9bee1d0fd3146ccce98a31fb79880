@@ -9,7 +9,7 @@ const Container = styled.div`
    margin: 20px auto;
 `;
 
-function App() {
+export default function App() {
    return (
       <Container>
          <Header />
@@ -19,5 +19,3 @@ function App() {
       </Container>
    );
 }
-
-export default App;

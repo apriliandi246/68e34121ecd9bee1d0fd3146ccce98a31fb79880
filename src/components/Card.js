@@ -3,8 +3,8 @@ import food from "../img/NUSA by Betawi Corner.jpeg";
 
 const Card = styled.div`
    width: 100%;
-   border-radius: 0px 0px 9px 9px;
    margin-bottom: 35px;
+   border-radius: 0px 0px 9px 9px;
    box-shadow: 0px 8px 10px 0px rgba(10, 31, 68, 0.1);
 
    img {
@@ -24,24 +24,24 @@ const CardDesc = styled.div`
    }
 
    .card__rating {
-      margin-bottom: 14px;
       display: flex;
       align-items: center;
+      margin-bottom: 16px;
    }
 
    .card__rating-number {
-      color: #424749;
+      color: #6e7679;
       font-size: 18px;
       margin-right: 10px;
       font-family: Arial, Helvetica, sans-serif;
    }
 
    .card__food-name {
-      font-size: 18px;
       color: #424749;
-      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 9px;
+      font-family: Arial, Helvetica, sans-serif;
    }
 
    .card__food-by {
@@ -51,10 +51,10 @@ const CardDesc = styled.div`
    }
 
    .card__footer {
-      margin-top: 22px;
       display: flex;
-      justify-content: space-between;
+      margin-top: 22px;
       align-items: center;
+      justify-content: space-between;
    }
 
    .card__price {
@@ -65,18 +65,19 @@ const CardDesc = styled.div`
    }
 
    .card__add-btn {
+      border: none;
+      outline: none;
       color: #ffffff;
       font-size: 18px;
-      outline: none;
-      background-color: #f9423a;
-      border: none;
       padding: 8px 30px;
+      font-weight: bold;
       border-radius: 5px;
+      background-color: #f9423a;
       font-family: Arial, Helvetica, sans-serif;
    }
 `;
 
-function App() {
+export default function App() {
    return (
       <Card>
          <img src={food} alt="food" />
@@ -84,7 +85,7 @@ function App() {
          <CardDesc>
             <div className="card__rating">
                <span className="card__rating-number">5</span>
-               <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+               <span className="card__rating-star">⭐ ⭐ ⭐ ⭐ ⭐</span>
             </div>
 
             <h1 className="card__food-name">NUSA by Betawi Corner</h1>
@@ -98,5 +99,3 @@ function App() {
       </Card>
    );
 }
-
-export default App;

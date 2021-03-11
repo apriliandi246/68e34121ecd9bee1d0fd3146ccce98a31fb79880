@@ -34,16 +34,16 @@ const dates = [
 
 const Container = styled.div`
    width: 100%;
-   margin-top: 40px;
    display: flex;
-   justify-content: center;
+   margin-top: 40px;
+   overflow-x: scroll;
 `;
 
 const Dates = styled.div`
    display: flex;
-   flex-direction: column;
    align-items: center;
-   margin-inline: 10px;
+   padding-inline: 30px;
+   flex-direction: column;
    font-family: Arial, Helvetica, sans-serif;
 
    .day {
@@ -63,7 +63,7 @@ const Line = styled.hr`
    border: 1px solid #f1f1f2;
 `;
 
-function Date() {
+export default function Date() {
    return (
       <React.Fragment>
          <Container>
@@ -79,5 +79,3 @@ function Date() {
       </React.Fragment>
    );
 }
-
-export default Date;

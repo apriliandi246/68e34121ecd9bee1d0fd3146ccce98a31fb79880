@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import leftArrow from "../img/left-arrow.svg";
 
 const Container = styled.div`
    display: flex;
@@ -9,33 +8,57 @@ const Container = styled.div`
 const HeaderMenu = styled.div`
    margin-left: 25px;
    font-family: Arial, Helvetica, sans-serif;
-`;
 
-const HeaderMenuOne = styled.p`
-   color: #6e7679;
-   font-size: 12px;
-   margin-bottom: 6px;
-`;
+   p {
+      color: #6e7679;
+      font-size: 12px;
+      margin-bottom: 2px;
+   }
 
-const HeaderMenuTwo = styled.h1`
-   color: #424749;
-   font-size: 20px;
-   font-weight: bold;
-   letter-spacing: 1px;
-`;
+   h1 {
+      display: flex;
+      color: #424749;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      align-items: center;
+   }
 
-const LeftIcon = styled.img`
-   width: 33px;
-   height: 33px;
+   svg {
+      margin-left: 7px;
+   }
 `;
 
 function Header() {
    return (
       <Container>
-         <LeftIcon src={leftArrow} alt="arrow-left" />
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            enableBackground="new 0 0 24 24"
+            viewBox="0 0 24 24"
+            fill="#424749"
+            width="37px"
+            height="37px"
+         >
+            <rect fill="none" height="24" width="24" />
+            <path d="M9,19l1.41-1.41L5.83,13H22V11H5.83l4.59-4.59L9,5l-7,7L9,19z" />
+         </svg>
+
          <HeaderMenu>
-            <HeaderMenuOne>ALAMAT PENGANTARAN</HeaderMenuOne>
-            <HeaderMenuTwo>Tokopedia Tower</HeaderMenuTwo>
+            <p>ALAMAT PENGANTARAN</p>
+            <h1>
+               Tokopedia Tower{" "}
+               <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#f9423a"
+                  width="30px"
+                  height="30px"
+               >
+                  <path d="M0 0h24v24H0V0z" fill="none" />
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+               </svg>
+            </h1>
          </HeaderMenu>
       </Container>
    );
