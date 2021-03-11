@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { mediaQueries } from "./utils/utils";
-import Cart from "./components/Cart";
-import Date from "./components/Date";
-import Posts from "./components/Posts";
+import Foods from "./components/Foods";
 import Header from "./components/Header";
-import ButtonTime from "./components/ButtonTime";
+import FoodsCart from "./components/FoodsCart";
 import ModalLocation from "./components/ModalLocation";
+import DateOrderLists from "./components/DateOrderLists";
+import ButtonsEatingTime from "./components/ButtonsEatingTime";
 
 export default function App() {
    const [isModalOpen, setModalStatus] = useState(false);
@@ -24,10 +24,10 @@ export default function App() {
    return (
       <Container>
          <Header changeStatusModal={changeStatusModal} />
-         <Date />
-         <ButtonTime />
-         <Posts />
-         <Cart />
+         <DateOrderLists />
+         <ButtonsEatingTime />
+         <Foods />
+         <FoodsCart />
          {isModalOpen === true && (
             <ModalLocation changeStatusModal={changeStatusModal} />
          )}

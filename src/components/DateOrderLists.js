@@ -2,12 +2,12 @@ import React from "react";
 import { dates } from "../utils/utils";
 import styled from "styled-components";
 
-export default function Date() {
+export default function DateOrderLists() {
    return (
       <React.Fragment>
          <Container>
             {dates.map((date) => (
-               <Dates key={Math.random()} date={date.date}>
+               <Dates key={Math.random()} day={date.day}>
                   <p className="day">{date.day}</p>
                   <p className="date">{date.date}</p>
                </Dates>
@@ -25,37 +25,37 @@ const Container = styled.div`
    margin-top: 30px;
    overflow-x: scroll;
    align-items: center;
-
-   @media only screen and (min-width: 910px) {
-      overflow-x: inherit;
-      justify-content: center;
-   }
 `;
 
 const activeDate = `
    font-weight: bold;
    border-radius: 50%;
    background-color: #424749;
-   padding: 10px 15.3px 10px 15.3px;
+   padding: 10px 15px 10px 15px;
 `;
 
 const Dates = styled.div`
    display: flex;
+   cursor: pointer;
    align-items: center;
-   padding-inline: 30px;
+   padding-inline: 26px;
    flex-direction: column;
    font-family: Arial, Helvetica, sans-serif;
-   ${(props) => props.date === 11 && activeDate}
+   ${(props) => props.day === "SEL" && activeDate}
 
    .day {
-      font-size: 12px;
+      font-size: 14px;
       margin-bottom: 5px;
-      color: ${(props) => (props.date === 11 ? "#ffffff;" : "#6e7679;")};
+      color: ${(props) => (props.day === "SEL" ? "#ffffff;" : "#6e7679;")};
+      opacity: ${(props) =>
+         props.day === "SAB" || props.day === "MIN" ? "0.3" : "1"};
    }
 
    .date {
       font-weight: bold;
-      color: ${(props) => (props.date === 11 ? "#ffffff;" : "#6e7679;")};
+      color: ${(props) => (props.day === "SEL" ? "#ffffff;" : "#6e7679;")};
+      opacity: ${(props) =>
+         props.day === "SAB" || props.day === "MIN" ? "0.3" : "1"};
    }
 `;
 

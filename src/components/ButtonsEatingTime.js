@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-export default function ButtonTime() {
+export default function ButtonsEatingTime() {
    const [activeButton, setActiveButton] = useState("lunch");
 
    return (

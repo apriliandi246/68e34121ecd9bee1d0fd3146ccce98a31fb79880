@@ -68,6 +68,34 @@ export const dates = [
       day: "MIN",
       date: 16,
    },
+   {
+      day: "SEN",
+      date: 17,
+   },
+   {
+      day: "SEL",
+      date: 18,
+   },
+   {
+      day: "RAB",
+      date: 19,
+   },
+   {
+      day: "KAM",
+      date: 20,
+   },
+   {
+      day: "JUM",
+      date: 21,
+   },
+   {
+      day: "SAB",
+      date: 22,
+   },
+   {
+      day: "MIN",
+      date: 23,
+   },
 ];
 
 export const mediaQueries = `

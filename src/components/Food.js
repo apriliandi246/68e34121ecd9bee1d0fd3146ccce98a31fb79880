@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Card({ food }) {
+export default function Food({ food }) {
    return (
       <CardContainer>
          <img src={food.urlImg} alt={food.name} />

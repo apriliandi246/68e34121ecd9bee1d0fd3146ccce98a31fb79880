@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { foods } from "../utils/utils";
-import Card from "./Card";
+import Food from "./Food";
 
-export default function Post() {
+export default function Foods() {
    return (
       <>
          <TitleDate>Kamis. 13 Maret 2019</TitleDate>
 
          <Container>
             {foods.map((food) => (
-               <Card key={food.name} food={food} />
+               <Food key={food.name} food={food} />
             ))}
          </Container>
       </>

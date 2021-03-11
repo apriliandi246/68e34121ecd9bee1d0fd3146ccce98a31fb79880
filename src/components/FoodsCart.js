@@ -1,7 +1,7 @@
 import { mediaQueries } from "../utils/utils";
 import styled from "styled-components";
 
-export default function Cart() {
+export default function FoodsCart() {
    return (
       <Container>
          <FoodItems>
@@ -44,7 +44,7 @@ const Container = styled.div`
    display: flex;
    opacity: 0.94;
    position: fixed;
-   border-radius: 5px;
+   border-radius: 6px;
    background-color: #a23530;
    justify-content: space-between;
    transform: translate(-50%, -50%);
