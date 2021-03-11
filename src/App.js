@@ -7,7 +7,7 @@ import ButtonTime from "./components/ButtonTime";
 
 const Container = styled.div`
    width: 90%;
-   margin: 20px auto;
+   margin: 20px auto 65px auto;
 `;
 
 export default function App() {

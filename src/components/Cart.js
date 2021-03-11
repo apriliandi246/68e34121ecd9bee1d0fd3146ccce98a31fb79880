@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-   top: 95%;
    left: 50%;
+   top: 94.2%;
    width: 93%;
    padding: 13px;
    display: flex;

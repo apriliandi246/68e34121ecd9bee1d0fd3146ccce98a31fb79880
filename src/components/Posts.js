@@ -13,7 +13,6 @@ const Container = styled.div`
 const TitleDate = styled.h1`
    color: #424749;
    font-size: 18px;
-   margin-top: 60px;
    font-weight: bold;
    margin-bottom: 20px;
    font-family: Arial, Helvetica, sans-serif;

@@ -35,7 +35,7 @@ const dates = [
 const Container = styled.div`
    width: 100%;
    display: flex;
-   margin-top: 40px;
+   margin-top: 30px;
    overflow-x: scroll;
 `;
 
