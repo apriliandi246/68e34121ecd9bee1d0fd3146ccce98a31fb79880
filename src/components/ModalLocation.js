@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { locations } from "../utils/utils";
 
 export default function ModalLocation({ changeStatusModal }) {
    return (
@@ -8,77 +9,33 @@ export default function ModalLocation({ changeStatusModal }) {
             <ModalTitle>Cek makanan yang tersedia di lokasi kamu!</ModalTitle>
             <InputSearch placeholder="Masukkan Lokasi" />
 
-            <ResultLocation>
-               <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  enableBackground="new 0 0 24 24"
-                  viewBox="0 0 24 24"
-                  fill="#a8adaf"
-                  width="23px"
-                  height="23px"
-               >
-                  <g>
-                     <path d="M0,0h24v24H0V0z" fill="none" />
-                  </g>
-                  <g>
-                     <path d="M12,2c-4.2,0-8,3.22-8,8.2c0,3.32,2.67,7.25,8,11.8c5.33-4.55,8-8.48,8-11.8C20,5.22,16.2,2,12,2z M12,12c-1.1,0-2-0.9-2-2 c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2C14,11.1,13.1,12,12,12z" />
-                  </g>
-               </svg>
+            <LocationContainer>
+               {locations.map((location) => (
+                  <ResultLocation key={Math.random()}>
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        enableBackground="new 0 0 24 24"
+                        viewBox="0 0 24 24"
+                        fill="#a8adaf"
+                        width="23px"
+                        height="23px"
+                     >
+                        <g>
+                           <path d="M0,0h24v24H0V0z" fill="none" />
+                        </g>
+                        <g>
+                           <path d="M12,2c-4.2,0-8,3.22-8,8.2c0,3.32,2.67,7.25,8,11.8c5.33-4.55,8-8.48,8-11.8C20,5.22,16.2,2,12,2z M12,12c-1.1,0-2-0.9-2-2 c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2C14,11.1,13.1,12,12,12z" />
+                        </g>
+                     </svg>
 
-               <div>
-                  <h1>Kulina</h1>
-                  <p>Jalam Tulodong Atas 28, Senayan, Kebayoran Baru</p>
-                  <hr />
-               </div>
-            </ResultLocation>
-
-            <ResultLocation>
-               <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  enableBackground="new 0 0 24 24"
-                  viewBox="0 0 24 24"
-                  fill="#a8adaf"
-                  width="23px"
-                  height="23px"
-               >
-                  <g>
-                     <path d="M0,0h24v24H0V0z" fill="none" />
-                  </g>
-                  <g>
-                     <path d="M12,2c-4.2,0-8,3.22-8,8.2c0,3.32,2.67,7.25,8,11.8c5.33-4.55,8-8.48,8-11.8C20,5.22,16.2,2,12,2z M12,12c-1.1,0-2-0.9-2-2 c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2C14,11.1,13.1,12,12,12z" />
-                  </g>
-               </svg>
-
-               <div>
-                  <h1>Pancoran Riverside Appertment</h1>
-                  <p>RT.6/RW.1, Pengadegan, Pancoran, South Jakarta</p>
-                  <hr />
-               </div>
-            </ResultLocation>
-
-            <ResultLocation>
-               <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  enableBackground="new 0 0 24 24"
-                  viewBox="0 0 24 24"
-                  fill="#a8adaf"
-                  width="23px"
-                  height="23px"
-               >
-                  <g>
-                     <path d="M0,0h24v24H0V0z" fill="none" />
-                  </g>
-                  <g>
-                     <path d="M12,2c-4.2,0-8,3.22-8,8.2c0,3.32,2.67,7.25,8,11.8c5.33-4.55,8-8.48,8-11.8C20,5.22,16.2,2,12,2z M12,12c-1.1,0-2-0.9-2-2 c0-1.1,0.9-2,2-2c1.1,0,2,0.9,2,2C14,11.1,13.1,12,12,12z" />
-                  </g>
-               </svg>
-
-               <div>
-                  <h1>Block71 Jakarta</h1>
-                  <p>Ariobimo Sentral, South Jakarta, RT.9/RW.4</p>
-                  <hr />
-               </div>
-            </ResultLocation>
+                     <div>
+                        <h1>{location.name}</h1>
+                        <p>{location.detail}</p>
+                        <hr />
+                     </div>
+                  </ResultLocation>
+               ))}
+            </LocationContainer>
          </SearchLocation>
       </Container>
    );
@@ -111,11 +68,20 @@ const Container = styled.div`
 
 const SearchLocation = styled.div`
    width: 100%;
-   height: 900px;
-   padding: 20px;
-   margin-top: 175px;
+   height: 734px;
+   padding: 25px 20px 0px 20px;
+   margin-top: 85px;
    background-color: #ffffff;
    border-radius: 10px 10px 0px 0px;
+`;
+
+const LocationContainer = styled.div`
+   height: 400px;
+   overflow-y: scroll;
+
+   &:last-child {
+      padding-bottom: 20px;
+   }
 `;
 
 const CloseModal = styled.span`

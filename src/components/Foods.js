@@ -2,14 +2,18 @@ import styled from "styled-components";
 import { foods } from "../utils/utils";
 import Food from "./Food";
 
-export default function Foods() {
+export default function Foods({ changeStatusCart }) {
    return (
       <>
          <TitleDate>Kamis. 13 Maret 2019</TitleDate>
 
          <Container>
             {foods.map((food) => (
-               <Food key={food.name} food={food} />
+               <Food
+                  key={food.name}
+                  food={food}
+                  changeStatusCart={changeStatusCart}
+               />
             ))}
          </Container>
       </>

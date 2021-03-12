@@ -7,10 +7,10 @@ export default function DateOrderLists() {
       <React.Fragment>
          <Container>
             {dates.map((date) => (
-               <Dates key={Math.random()} day={date.day}>
+               <Date key={Math.random()} day={date.day}>
                   <p className="day">{date.day}</p>
                   <p className="date">{date.date}</p>
-               </Dates>
+               </Date>
             ))}
          </Container>
 
@@ -25,16 +25,17 @@ const Container = styled.div`
    margin-top: 30px;
    overflow-x: scroll;
    align-items: center;
+   padding-bottom: 2px;
 `;
 
 const activeDate = `
    font-weight: bold;
    border-radius: 50%;
    background-color: #424749;
-   padding: 10px 15px 10px 15px;
+   padding: 9px 14px 9px 14px;
 `;
 
-const Dates = styled.div`
+const Date = styled.div`
    display: flex;
    cursor: pointer;
    align-items: center;
@@ -60,7 +61,7 @@ const Dates = styled.div`
 `;
 
 const Line = styled.hr`
-   margin-top: 20px;
+   margin-top: 7px;
    background-color: #f1f1f2;
    border: 1px solid #f1f1f2;
 `;

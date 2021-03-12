@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export default function Food({ food }) {
+export default function Food({ food, changeStatusCart }) {
    return (
-      <CardContainer>
+      <Container>
          <img src={food.urlImg} alt={food.name} />
 
-         <CardDesc>
-            <div className="card__rating">
-               <span className="card__rating-number">4.5</span>
-               <div className="card__rating-star">
+         <FoodDesc>
+            <div className="food__rating">
+               <span className="food__rating-number">4.5</span>
+               <div className="food__rating-star">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
@@ -75,21 +75,21 @@ export default function Food({ food }) {
                </div>
             </div>
 
-            <h1 className="card__food-name">{food.name}</h1>
-            <p className="card__food-by">by Kulina .Lunch</p>
+            <h1 className="food__name">{food.name}</h1>
+            <p className="food__by">by Kulina .Lunch</p>
 
-            <div className="card__footer">
-               <p className="card__price">{food.price}</p>
-               <button className="card__add-btn">
-                  ADD <span className="card__add-icon">+</span>
+            <div className="food__footer">
+               <p className="food__price">{food.price}</p>
+               <button className="food__add-btn" onClick={changeStatusCart}>
+                  ADD <span className="food__add-icon">+</span>
                </button>
             </div>
-         </CardDesc>
-      </CardContainer>
+         </FoodDesc>
+      </Container>
    );
 }
 
-const CardContainer = styled.div`
+const Container = styled.div`
    width: 100%;
    border-radius: 9px;
    margin-bottom: 32px;
@@ -103,34 +103,34 @@ const CardContainer = styled.div`
    }
 `;
 
-const CardDesc = styled.div`
+const FoodDesc = styled.div`
    padding: 20px;
    margin-top: 5px;
 
-   .card__rating-logo {
+   .food__rating-logo {
       width: 100px;
       height: 80px;
    }
 
-   .card__rating {
+   .food__rating {
       display: flex;
       align-items: center;
       margin-bottom: 18px;
    }
 
-   .card__rating-number {
+   .food__rating-number {
       color: #6e7679;
       font-size: 18px;
       margin-right: 10px;
       font-family: Arial, Helvetica, sans-serif;
    }
 
-   .card__rating-star {
+   .food__rating-star {
       display: flex;
       align-items: center;
    }
 
-   .card__food-name {
+   .food__name {
       color: #424749;
       font-size: 18px;
       font-weight: bold;
@@ -139,27 +139,27 @@ const CardDesc = styled.div`
       font-family: Arial, Helvetica, sans-serif;
    }
 
-   .card__food-by {
+   .food__by {
       color: #6e7679;
       font-size: 16px;
       font-family: Arial, Helvetica, sans-serif;
    }
 
-   .card__footer {
+   .food__footer {
       display: flex;
       margin-top: 22px;
       align-items: center;
       justify-content: space-between;
    }
 
-   .card__price {
+   .food__price {
       color: #424749;
       font-size: 18px;
       font-weight: bold;
       font-family: Arial, Helvetica, sans-serif;
    }
 
-   .card__add-btn {
+   .food__add-btn {
       border: none;
       outline: none;
       display: flex;
@@ -174,7 +174,7 @@ const CardDesc = styled.div`
       font-family: Arial, Helvetica, sans-serif;
    }
 
-   .card__add-icon {
+   .food__add-icon {
       font-size: 24px;
       font-weight: bold;
       margin-left: 5px;

@@ -35,7 +35,7 @@ const notActive = `
 const Container = styled.div`
    width: 100%;
    display: flex;
-   margin-top: 18px;
+   margin-top: 20px;
    margin-bottom: 60px;
    justify-content: center;
 

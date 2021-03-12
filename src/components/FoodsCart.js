@@ -1,15 +1,15 @@
 import { mediaQueries } from "../utils/utils";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export default function FoodsCart() {
    return (
       <Container>
-         <FoodItems>
+         <div>
             <h1>5 Items | Rp 125, 000</h1>
             <p>Termasuk ongkos kirim</p>
-         </FoodItems>
+         </div>
 
-         <div className="card-icon">
+         <div>
             <svg
                xmlns="http://www.w3.org/2000/svg"
                viewBox="0 0 24 24"
@@ -36,31 +36,43 @@ export default function FoodsCart() {
    );
 }
 
+const animation = keyframes`
+   from {
+      top: 120%;
+   }
+
+   to {
+      top: 94.2%;
+   }
+`;
+
 const Container = styled.div`
    left: 50%;
    top: 94.2%;
    width: 93%;
-   padding: 13px;
+   z-index: 2;
+   padding: 14px;
    display: flex;
    opacity: 0.94;
    position: fixed;
    border-radius: 6px;
+   align-items: center;
    background-color: #a23530;
    justify-content: space-between;
    transform: translate(-50%, -50%);
+   animation: ${animation} 0.2s ease;
    ${mediaQueries}
-`;
-
-const FoodItems = styled.div`
-   color: #ffffff;
-   font-family: Arial, Helvetica, sans-serif;
 
    h1 {
+      color: #ffffff;
       font-weight: bold;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      font-family: Arial, Helvetica, sans-serif;
    }
 
    p {
+      color: #ffffff;
       font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
    }
 `;

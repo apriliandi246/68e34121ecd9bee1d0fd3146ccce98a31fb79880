@@ -18,7 +18,7 @@ export default function Header({ changeStatusModal }) {
          <HeaderMenu>
             <p>ALAMAT PENGANTARAN</p>
             <h1 onClick={changeStatusModal}>
-               Tokopedia Tower{" "}
+               Tokopedia Tower
                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

@@ -9,6 +9,7 @@ import DateOrderLists from "./components/DateOrderLists";
 import ButtonsEatingTime from "./components/ButtonsEatingTime";
 
 export default function App() {
+   const [isCartOpen, setStatusCart] = useState(false);
    const [isModalOpen, setModalStatus] = useState(false);
 
    function changeStatusModal() {
@@ -21,13 +22,18 @@ export default function App() {
       }
    }
 
+   function changeStatusCart() {
+      setStatusCart(true);
+   }
+
    return (
-      <Container>
+      <Container statusCart={isCartOpen}>
          <Header changeStatusModal={changeStatusModal} />
          <DateOrderLists />
          <ButtonsEatingTime />
-         <Foods />
-         <FoodsCart />
+         <Foods changeStatusCart={changeStatusCart} />
+
+         {isCartOpen === true && <FoodsCart />}
          {isModalOpen === true && (
             <ModalLocation changeStatusModal={changeStatusModal} />
          )}
@@ -38,6 +44,7 @@ export default function App() {
 const Container = styled.div`
    width: 90%;
    overflow-x: hidden;
-   margin: 7px auto 55px auto;
+   margin: 7px auto ${(props) => (props.statusCart === true ? "55px" : "10px")}
+      auto;
    ${mediaQueries}
 `;
