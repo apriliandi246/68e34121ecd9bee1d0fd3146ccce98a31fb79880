@@ -59,7 +59,10 @@ const Container = styled.div`
    z-index: 3;
    width: 100%;
    height: 100%;
+   display: flex;
    position: fixed;
+   align-items: center;
+   justify-content: center;
    backdrop-filter: blur(0.8px);
    animation: ${animation} 0.2s;
    background-color: rgba(0, 0, 0, 0.3);
@@ -69,10 +72,23 @@ const Container = styled.div`
 const SearchLocation = styled.div`
    width: 100%;
    height: 734px;
-   padding: 25px 20px 0px 20px;
    margin-top: 85px;
    background-color: #ffffff;
+   padding: 25px 20px 0px 20px;
    border-radius: 10px 10px 0px 0px;
+
+   @media only screen and (min-width: 1000px) {
+      width: 60%;
+      border-radius: 10px;
+   }
+
+   @media only screen and (min-width: 1460px) {
+      width: 50%;
+   }
+
+   @media only screen and (min-width: 1800px) {
+      width: 38%;
+   }
 `;
 
 const LocationContainer = styled.div`
