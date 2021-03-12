@@ -14,28 +14,80 @@ export const foods = [
       price: "Rp 50,500",
       urlImg: "https://kln.imgix.net/production/nusa-cumi-pedas.jpeg?w=700",
    },
+];
+
+export const locations = [
    {
-      name: "Hainamese Chicken Salted Egg Rice",
-      price: "Rp 33,000",
-      urlImg: "https://kln.imgix.net/production/CXNA1A4G4E-P2040059.JPG?w=700",
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 28, Senayan, Kebayoran Baru",
    },
    {
-      name: "Ayam Balado",
-      price: "Rp 22,914",
-      urlImg:
-         "https://kln.imgix.net/production/2ecddc2a98083bfab1b503334afbeeeb_Ayam_Balado-Tempe_Goreng.jpg?w=700",
+      name: "Pancoran Riverside Appertment",
+      detail: "RT.6/RW.2, Pengadegan, Pancoran, South Jakarta",
    },
    {
-      name: "Nasi Dori Asam Manis",
-      price: "Rp 25,000",
-      urlImg:
-         "https://kln.imgix.net/production/M5D01I5D5P-nasi-dori-asam-manis.jpg?w=700",
+      name: "Block71 Jakarta",
+      detail: "Ariobimo Sentral, South Jakarta, RT.9/RW.4",
    },
    {
-      name: "Nasi Ayam Bakar dan Bakwan Jagung",
-      price: "Rp 34,000",
-      urlImg:
-         "https://kln.imgix.net/production/photo6314369290203146855.jpg?w=700",
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 29, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Pancoran Riverside Appertment",
+      detail: "RT.6/RW.1, Pengadegan, Pancoran, South Jakarta",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 30, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 28, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Pancoran Riverside Appertment",
+      detail: "RT.6/RW.2, Pengadegan, Pancoran, South Jakarta",
+   },
+   {
+      name: "Block71 Jakarta",
+      detail: "Ariobimo Sentral, South Jakarta, RT.9/RW.4",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 29, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Pancoran Riverside Appertment",
+      detail: "RT.6/RW.1, Pengadegan, Pancoran, South Jakarta",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 30, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 29, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Pancoran Riverside Appertment",
+      detail: "RT.6/RW.1, Pengadegan, Pancoran, South Jakarta",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 30, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 29, Senayan, Kebayoran Baru",
+   },
+   {
+      name: "Pancoran Riverside Appertment",
+      detail: "RT.6/RW.1, Pengadegan, Pancoran, South Jakarta",
+   },
+   {
+      name: "Kulina",
+      detail: "Jalam Tulodong Atas 30, Senayan, Kebayoran Baru",
    },
 ];
 
