@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { locations } from "../utils/utils";
 
 export default function ModalLocation({ changeStatusModal }) {
@@ -41,18 +41,6 @@ export default function ModalLocation({ changeStatusModal }) {
    );
 }
 
-const animation = keyframes`
-   from {
-      opacity: 0;
-      transform: scale(1.2);
-   }
-
-   to {
-      opacity: 1;
-      transform: scale(1);
-   }
-`;
-
 const Container = styled.div`
    top: 0;
    left: 0;
@@ -64,7 +52,6 @@ const Container = styled.div`
    align-items: center;
    justify-content: center;
    backdrop-filter: blur(0.8px);
-   animation: ${animation} 0.2s;
    background-color: rgba(0, 0, 0, 0.3);
    font-family: Arial, Helvetica, sans-serif;
 `;
@@ -108,7 +95,6 @@ const CloseModal = styled.span`
    font-weight: bold;
    margin-right: 5px;
    font-family: Ubuntu;
-   display: inline-block;
 `;
 
 const ModalTitle = styled.h1`
