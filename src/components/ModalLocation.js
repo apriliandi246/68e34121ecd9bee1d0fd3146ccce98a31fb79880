@@ -1,11 +1,25 @@
 import styled from "styled-components";
 import { locations } from "../utils/utils";
+import { useDispatch } from "react-redux";
+import { toggledModal } from "../store/statusComponents/statusComponents";
 
-export default function ModalLocation({ changeStatusModal }) {
+export default function ModalLocation() {
+   const dispatch = useDispatch();
+
    return (
       <Container>
          <SearchLocation>
-            <CloseModal onClick={changeStatusModal}>X</CloseModal>
+            <CloseModal
+               onClick={() =>
+                  dispatch(
+                     toggledModal({
+                        status: false,
+                     })
+                  )
+               }
+            >
+               X
+            </CloseModal>
             <ModalTitle>Cek makanan yang tersedia di lokasi kamu!</ModalTitle>
             <InputSearch placeholder="Masukkan Lokasi" />
 

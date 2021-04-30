@@ -1,6 +1,17 @@
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/products/products";
+import { showedTheCart } from "../store/statusComponents/statusComponents";
+import currency from "../utils/currencyFormat";
 
-export default function Food({ food, changeStatusCart }) {
+export default function Food({ food }) {
+   const dispatch = useDispatch();
+
+   function addProduct() {
+      dispatch(showedTheCart({ status: true }));
+      dispatch(addToCart({ price: food.price }));
+   }
+
    return (
       <Container>
          <img src={food.urlImg} alt={food.name} />
@@ -79,8 +90,8 @@ export default function Food({ food, changeStatusCart }) {
             <p className="food__by">by Kulina .Lunch</p>
 
             <div className="food__footer">
-               <p className="food__price">{food.price}</p>
-               <button className="food__add-btn" onClick={changeStatusCart}>
+               <p className="food__price">{currency.format(food.price)}</p>
+               <button className="food__add-btn" onClick={addProduct}>
                   ADD <span className="food__add-icon">+</span>
                </button>
             </div>

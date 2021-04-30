@@ -1,17 +1,17 @@
 export const foods = [
    {
       name: "NUSA by Betawi Corner",
-      price: "Rp 35,000",
+      price: 35000,
       urlImg: "https://kln.imgix.net/production/nusa-by-kafe-betawi.jpeg",
    },
    {
       name: "Ayam Goreng Serai",
-      price: "Rp 70,000",
+      price: 70000,
       urlImg: "https://kln.imgix.net/production/5UDJJOS97W-Savoury-2.jpg?w=700",
    },
    {
       name: "NUSA Cumi Pedas",
-      price: "Rp 50,500",
+      price: 25000,
       urlImg: "https://kln.imgix.net/production/nusa-cumi-pedas.jpeg?w=700",
    },
 ];

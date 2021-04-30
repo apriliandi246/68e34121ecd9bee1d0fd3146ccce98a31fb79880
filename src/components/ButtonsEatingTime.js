@@ -1,18 +1,26 @@
-import { useState } from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import {
+   choosenFood,
+   getStatusFood,
+} from "../store/statusComponents/statusComponents";
 
 export default function ButtonsEatingTime() {
-   const [activeButton, setActiveButton] = useState("lunch");
+   const dispatch = useDispatch();
+   const statusFood = useSelector(getStatusFood);
 
    return (
-      <Container active={activeButton}>
-         <button className="lunch-btn" onClick={() => setActiveButton("lunch")}>
+      <Container active={statusFood}>
+         <button
+            className="lunch-btn"
+            onClick={() => dispatch(choosenFood({ status: "lunch" }))}
+         >
             Lunch
          </button>
 
          <button
             className="dinner-btn"
-            onClick={() => setActiveButton("dinner")}
+            onClick={() => dispatch(choosenFood({ status: "dinner" }))}
          >
             Dinner
          </button>

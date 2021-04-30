@@ -1,11 +1,19 @@
+import { useSelector } from "react-redux";
 import { mediaQueries } from "../utils/utils";
+import currency from "../utils/currencyFormat";
 import styled, { keyframes } from "styled-components";
+import { totalItems, totalPriceOfProducts } from "../store/products/products";
 
 export default function FoodsCart() {
+   const totalFoods = useSelector(totalItems);
+   const totalPrice = useSelector(totalPriceOfProducts);
+
    return (
       <Container>
          <div>
-            <h1>5 Items | Rp 125, 000</h1>
+            <h1>
+               {totalFoods} Items | {currency.format(totalPrice)}
+            </h1>
             <p>Termasuk ongkos kirim</p>
          </div>
 
@@ -61,6 +69,7 @@ const Container = styled.div`
    justify-content: space-between;
    transform: translate(-50%, -50%);
    animation: ${animation} 0.2s ease;
+
    ${mediaQueries}
 
    h1 {

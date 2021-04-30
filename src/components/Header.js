@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { toggledModal } from "../store/statusComponents/statusComponents";
 
-export default function Header({ changeStatusModal }) {
+export default function Header() {
+   const dispatch = useDispatch();
+
    return (
       <Container>
          <svg
@@ -17,7 +21,15 @@ export default function Header({ changeStatusModal }) {
 
          <HeaderMenu>
             <p>ALAMAT PENGANTARAN</p>
-            <h1 onClick={changeStatusModal}>
+            <h1
+               onClick={() =>
+                  dispatch(
+                     toggledModal({
+                        status: true,
+                     })
+                  )
+               }
+            >
                Tokopedia Tower
                <svg
                   xmlns="http://www.w3.org/2000/svg"
