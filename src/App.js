@@ -2,15 +2,12 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import Foods from "./components/Foods";
 import Header from "./components/Header";
-import FoodsCart from "./components/FoodsCart";
+import { useSelector } from "react-redux";
+import FoodCart from "./components/FoodCart";
 import ModalLocation from "./components/ModalLocation";
 import DateOrderLists from "./components/DateOrderLists";
+import { getStatusCart, getStatusModal } from "./store/ui";
 import ButtonsEatingTime from "./components/ButtonsEatingTime";
-import { useSelector } from "react-redux";
-import {
-   getStatusCart,
-   getStatusModal,
-} from "./store/statusComponents/statusComponents";
 
 export default function App() {
    const statusCart = useSelector(getStatusCart);
@@ -28,7 +25,7 @@ export default function App() {
          <ButtonsEatingTime />
          <Foods />
 
-         {statusCart === true && <FoodsCart />}
+         {statusCart === true && <FoodCart />}
          {statusModal === true && <ModalLocation />}
       </Container>
    );

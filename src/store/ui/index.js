@@ -20,9 +20,14 @@ const slice = createSlice({
    },
 });
 
-export const { showedTheCart, toggledModal, choosenFood } = slice.actions;
-export default slice.reducer;
+const { showedTheCart, toggledModal, choosenFood } = slice.actions;
 
 export const getStatusFood = (state) => state.ui.statusFood;
 export const getStatusModal = (state) => state.ui.isModalShow;
 export const getStatusCart = (state) => state.ui.isCartShow;
+
+export const toggleModal = (status) => toggledModal(status);
+export const chooseFoodTime = (status) => choosenFood(status);
+export const showFoodCart = (status) => showedTheCart(status);
+
+export default slice.reducer;

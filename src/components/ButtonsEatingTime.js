@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import {
-   choosenFood,
-   getStatusFood,
-} from "../store/statusComponents/statusComponents";
+import { chooseFoodTime, getStatusFood } from "../store/ui";
 
 export default function ButtonsEatingTime() {
    const dispatch = useDispatch();
@@ -13,14 +10,14 @@ export default function ButtonsEatingTime() {
       <Container active={statusFood}>
          <button
             className="lunch-btn"
-            onClick={() => dispatch(choosenFood({ status: "lunch" }))}
+            onClick={() => dispatch(chooseFoodTime({ status: "lunch" }))}
          >
             Lunch
          </button>
 
          <button
             className="dinner-btn"
-            onClick={() => dispatch(choosenFood({ status: "dinner" }))}
+            onClick={() => dispatch(chooseFoodTime({ status: "dinner" }))}
          >
             Dinner
          </button>

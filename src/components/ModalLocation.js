@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
+import { toggleModal } from "../store/ui";
 import { locations } from "../dummy-data/data";
-import { toggledModal } from "../store/statusComponents/statusComponents";
 
 export default function ModalLocation() {
    const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export default function ModalLocation() {
       <Container>
          <SearchLocation>
             <CloseModal
-               onClick={() => dispatch(toggledModal({ status: false }))}
+               onClick={() => dispatch(toggleModal({ status: false }))}
             >
                X
             </CloseModal>

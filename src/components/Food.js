@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
+import { showFoodCart } from "../store/ui";
+import { addToCart } from "../store/foods";
 import currency from "../utils/currencyFormat";
-import { addToCart } from "../store/products/products";
-import { showedTheCart } from "../store/statusComponents/statusComponents";
 
 export default function Food({ food }) {
    const dispatch = useDispatch();
 
-   function addProduct() {
-      dispatch(showedTheCart({ status: true }));
+   function addItem() {
+      dispatch(showFoodCart({ status: true }));
       dispatch(addToCart({ price: food.price }));
    }
 
@@ -46,11 +46,11 @@ export default function Food({ food }) {
                   </svg>
 
                   <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="#6e7679"
                      width="18px"
                      height="18px"
+                     fill="#6e7679"
+                     viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg"
                   >
                      <path d="M0 0h24v24H0z" fill="none" />
                      <path d="M0 0h24v24H0z" fill="none" />
@@ -58,11 +58,11 @@ export default function Food({ food }) {
                   </svg>
 
                   <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="#6e7679"
                      width="18px"
                      height="18px"
+                     fill="#6e7679"
+                     viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg"
                   >
                      <path d="M0 0h24v24H0z" fill="none" />
                      <path d="M0 0h24v24H0z" fill="none" />
@@ -70,12 +70,12 @@ export default function Food({ food }) {
                   </svg>
 
                   <svg
-                     xmlns="http://www.w3.org/2000/svg"
+                     width="18px"
+                     height="18px"
+                     fill="#6e7679"
+                     viewBox="0 0 24 24"
                      enableBackground="new 0 0 24 24"
-                     viewBox="0 0 24 24"
-                     fill="#6e7679"
-                     width="18px"
-                     height="18px"
+                     xmlns="http://www.w3.org/2000/svg"
                   >
                      <g>
                         <rect fill="none" height="24" width="24" x="0" />
@@ -96,7 +96,7 @@ export default function Food({ food }) {
 
             <div className="food__footer">
                <p className="food__price">{currency.format(food.price)}</p>
-               <button className="food__add-btn" onClick={addProduct}>
+               <button className="food__add-btn" onClick={addItem}>
                   ADD <span className="food__add-icon">+</span>
                </button>
             </div>

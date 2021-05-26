@@ -1,18 +1,21 @@
-import { addedTotalPrice } from "../products/products";
+import { addedTotalPrice } from "../foods";
 
-const totalPrice = (store) => (next) => (action) => {
-   if (action.type === "food/addProduct") {
-      const currentActionPrice = action.payload.price;
-      const currentTotalPrice = store.getState().entities.totalPriceOfProducts;
+const totalPrice =
+   ({ dispatch, getState }) =>
+   (next) =>
+   (action) => {
+      if (action.type === "food/addProduct") {
+         const currentActionPrice = action.payload.price;
+         const currentTotalPrice = getState().entities.totalPrice;
 
-      store.dispatch(
-         addedTotalPrice({
-            totalPrice: currentTotalPrice + currentActionPrice,
-         })
-      );
-   }
+         dispatch(
+            addedTotalPrice({
+               totalPrice: currentTotalPrice + currentActionPrice,
+            })
+         );
+      }
 
-   next(action);
-};
+      next(action);
+   };
 
 export default totalPrice;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { toggledModal } from "../store/statusComponents/statusComponents";
+import { toggleModal } from "../store/ui";
 
 export default function Header() {
    const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export default function Header() {
 
          <HeaderMenu>
             <p>ALAMAT PENGANTARAN</p>
-            <h1 onClick={() => dispatch(toggledModal({ status: true }))}>
+            <h1 onClick={() => dispatch(toggleModal({ status: true }))}>
                Tokopedia Tower
                <svg
                   width="30px"

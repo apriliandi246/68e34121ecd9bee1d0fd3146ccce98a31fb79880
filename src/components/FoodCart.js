@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import currency from "../utils/currencyFormat";
 import styled, { keyframes } from "styled-components";
-import { totalItems, totalPriceOfProducts } from "../store/products/products";
+import { totalItems, totalPriceOfProducts } from "../store/foods";
 
 export default function FoodsCart() {
    const totalFoods = useSelector(totalItems);
