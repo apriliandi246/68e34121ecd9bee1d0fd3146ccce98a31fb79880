@@ -149,29 +149,3 @@ export const dates = [
       date: 23,
    },
 ];
-
-export const mediaQueries = `
-   @media only screen and (min-width: 635px) {
-      width: 80%;
-   }
-
-   @media only screen and (min-width: 714px) {
-      width: 70%;
-   }
-
-   @media only screen and (min-width: 810px) {
-      width: 60%;
-   }
-
-   @media only screen and (min-width: 1110px) {
-      width: 50%;
-   }
-
-   @media only screen and (min-width: 1250px) {
-      width: 40%;
-   }
-
-   @media only screen and (min-width: 1600px) {
-      width: 30%;
-   }
-`;

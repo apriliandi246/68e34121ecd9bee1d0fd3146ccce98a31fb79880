@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { locations } from "../utils/utils";
 import { useDispatch } from "react-redux";
+import { locations } from "../dummy-data/data";
 import { toggledModal } from "../store/statusComponents/statusComponents";
 
 export default function ModalLocation() {
@@ -10,29 +10,38 @@ export default function ModalLocation() {
       <Container>
          <SearchLocation>
             <CloseModal
-               onClick={() =>
-                  dispatch(
-                     toggledModal({
-                        status: false,
-                     })
-                  )
-               }
+               onClick={() => dispatch(toggledModal({ status: false }))}
             >
                X
             </CloseModal>
+
             <ModalTitle>Cek makanan yang tersedia di lokasi kamu!</ModalTitle>
-            <InputSearch placeholder="Masukkan Lokasi" />
+
+            <InputSearchContainer>
+               <InputSearch placeholder="Masukkan Lokasi" />
+
+               <svg
+                  width="23px"
+                  height="23px"
+                  fill="#E44C52"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+               >
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+               </svg>
+            </InputSearchContainer>
 
             <LocationContainer>
                {locations.map((location) => (
                   <ResultLocation key={Math.random()}>
                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        enableBackground="new 0 0 24 24"
-                        viewBox="0 0 24 24"
-                        fill="#a8adaf"
                         width="23px"
                         height="23px"
+                        fill="#a8adaf"
+                        viewBox="0 0 24 24"
+                        enableBackground="new 0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
                      >
                         <g>
                            <path d="M0,0h24v24H0V0z" fill="none" />
@@ -45,7 +54,6 @@ export default function ModalLocation() {
                      <div>
                         <h1>{location.name}</h1>
                         <p>{location.detail}</p>
-                        <hr />
                      </div>
                   </ResultLocation>
                ))}
@@ -65,9 +73,7 @@ const Container = styled.div`
    position: fixed;
    align-items: center;
    justify-content: center;
-   backdrop-filter: blur(0.8px);
-   background-color: rgba(0, 0, 0, 0.3);
-   font-family: Arial, Helvetica, sans-serif;
+   background-color: rgba(0, 0, 0, 0.6);
 `;
 
 const SearchLocation = styled.div`
@@ -77,80 +83,71 @@ const SearchLocation = styled.div`
    background-color: #ffffff;
    padding: 25px 20px 0px 20px;
    border-radius: 10px 10px 0px 0px;
-
-   @media only screen and (min-width: 1000px) {
-      width: 60%;
-      border-radius: 10px;
-   }
-
-   @media only screen and (min-width: 1460px) {
-      width: 50%;
-   }
-
-   @media only screen and (min-width: 1800px) {
-      width: 38%;
-   }
 `;
 
 const LocationContainer = styled.div`
    height: 400px;
    overflow-y: scroll;
-
-   &:last-child {
-      padding-bottom: 20px;
-   }
 `;
 
 const CloseModal = styled.span`
    float: right;
-   margin-top: 5px;
-   font-size: 26px;
+   margin-top: 8px;
+   font-size: 22px;
    cursor: pointer;
-   font-weight: bold;
    margin-right: 5px;
-   font-family: Ubuntu;
+   font-family: Arial, Helvetica, sans-serif;
 `;
 
 const ModalTitle = styled.h1`
-   font-size: 20px;
    margin-top: 50px;
    line-height: 28px;
+   font: normal 20px Arial, Helvetica, sans-serif;
+`;
+
+const InputSearchContainer = styled.div`
+   margin-top: 24px;
+   position: relative;
+   margin-bottom: 35px;
+
+   svg {
+      left: 0;
+      top: 0;
+      margin-top: 12px;
+      margin-left: 12px;
+      position: absolute;
+   }
 `;
 
 const InputSearch = styled.input`
    width: 100%;
    outline: none;
    padding: 12px;
-   font-size: 17px;
-   margin-top: 25px;
+   font-size: 16px;
+   text-indent: 30px;
    border-radius: 4px;
-   margin-bottom: 35px;
-   border: 2px solid #f1f1f2;
+   border: 1px solid #f1f1f2; ;
 `;
 
 const ResultLocation = styled.div`
    display: flex;
-   margin-bottom: 25px;
+   margin-bottom: 24px;
+   padding-bottom: 16px;
+   border-bottom: 1px solid #f1f1f2;
 
    svg {
       margin-right: 12px;
    }
 
    h1 {
-      font-size: 17px;
-      margin-bottom: 3px;
       line-height: 22px;
+      margin-bottom: 4px;
+      font: normal 16px Arial, Helvetica, sans-serif;
    }
 
    p {
       color: #6e7679;
-      font-size: 14px;
       line-height: 18px;
-   }
-
-   hr {
-      margin-top: 10px;
-      border: 1px solid #f1f1f2;
-      background-color: #f1f1f2;
+      font: normal 14px Arial, Helvetica, sans-serif;
    }
 `;

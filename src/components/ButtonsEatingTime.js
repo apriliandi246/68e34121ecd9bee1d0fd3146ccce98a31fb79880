@@ -44,14 +44,14 @@ const Container = styled.div`
    width: 100%;
    display: flex;
    margin-top: 20px;
-   margin-bottom: 60px;
+   margin-bottom: 40px;
    justify-content: center;
 
    button {
       outline: none;
       cursor: pointer;
-      font-size: 18px;
-      padding: 7px 58px;
+      font-size: 16px;
+      padding: 8px 62px;
       font-family: Arial, Helvetica, sans-serif;
    }
 

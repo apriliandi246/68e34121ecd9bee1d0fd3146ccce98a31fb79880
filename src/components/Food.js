@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
+import currency from "../utils/currencyFormat";
 import { addToCart } from "../store/products/products";
 import { showedTheCart } from "../store/statusComponents/statusComponents";
-import currency from "../utils/currencyFormat";
 
 export default function Food({ food }) {
    const dispatch = useDispatch();
@@ -19,18 +19,32 @@ export default function Food({ food }) {
          <FoodDesc>
             <div className="food__rating">
                <span className="food__rating-number">4.5</span>
+
                <div className="food__rating-star">
                   <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="#6e7679"
                      width="18px"
                      height="18px"
+                     fill="#6e7679"
+                     viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg"
                   >
                      <path d="M0 0h24v24H0z" fill="none" />
                      <path d="M0 0h24v24H0z" fill="none" />
                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
+
+                  <svg
+                     width="18px"
+                     height="18px"
+                     fill="#6e7679"
+                     viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <path d="M0 0h24v24H0z" fill="none" />
+                     <path d="M0 0h24v24H0z" fill="none" />
+                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
@@ -42,6 +56,7 @@ export default function Food({ food }) {
                      <path d="M0 0h24v24H0z" fill="none" />
                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
+
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
@@ -53,17 +68,7 @@ export default function Food({ food }) {
                      <path d="M0 0h24v24H0z" fill="none" />
                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                   </svg>
-                  <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="#6e7679"
-                     width="18px"
-                     height="18px"
-                  >
-                     <path d="M0 0h24v24H0z" fill="none" />
-                     <path d="M0 0h24v24H0z" fill="none" />
-                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                  </svg>
+
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      enableBackground="new 0 0 24 24"
@@ -102,7 +107,7 @@ export default function Food({ food }) {
 
 const Container = styled.div`
    width: 100%;
-   border-radius: 9px;
+   border-radius: 10px;
    margin-bottom: 32px;
    border: 1px solid #f1f1f2;
    box-shadow: 0px 8px 10px 0px rgba(10, 31, 68, 0.1);
@@ -110,7 +115,8 @@ const Container = styled.div`
    img {
       width: 100%;
       height: auto;
-      border-radius: 9px 9px 0px 0px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
    }
 `;
 
@@ -132,7 +138,7 @@ const FoodDesc = styled.div`
    .food__rating-number {
       color: #6e7679;
       font-size: 18px;
-      margin-right: 10px;
+      margin-right: 12px;
       font-family: Arial, Helvetica, sans-serif;
    }
 
@@ -146,7 +152,7 @@ const FoodDesc = styled.div`
       font-size: 18px;
       font-weight: bold;
       line-height: 23px;
-      margin-bottom: 9px;
+      margin-bottom: 8px;
       font-family: Arial, Helvetica, sans-serif;
    }
 
@@ -158,16 +164,14 @@ const FoodDesc = styled.div`
 
    .food__footer {
       display: flex;
-      margin-top: 22px;
+      margin-top: 24px;
       align-items: center;
       justify-content: space-between;
    }
 
    .food__price {
       color: #424749;
-      font-size: 18px;
-      font-weight: bold;
-      font-family: Arial, Helvetica, sans-serif;
+      font: bold 18px Arial, Helvetica, sans-serif;
    }
 
    .food__add-btn {
@@ -177,17 +181,15 @@ const FoodDesc = styled.div`
       color: #ffffff;
       font-size: 18px;
       cursor: pointer;
-      padding: 7px 29px;
-      font-weight: bold;
+      padding: 8px 32px;
       border-radius: 5px;
       align-items: center;
       background-color: #f9423a;
-      font-family: Arial, Helvetica, sans-serif;
+      font: normal 18px Arial, Helvetica, sans-serif;
    }
 
    .food__add-icon {
-      font-size: 24px;
-      font-weight: bold;
-      margin-left: 5px;
+      font-size: 22px;
+      margin-left: 4px;
    }
 `;

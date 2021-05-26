@@ -1,13 +1,13 @@
 import React from "react";
-import { dates } from "../utils/utils";
 import styled from "styled-components";
+import { dates } from "../dummy-data/data";
 
 export default function DateOrderLists() {
    return (
-      <React.Fragment>
+      <>
          <Container>
             {dates.map((date) => (
-               <Date key={Math.random()} day={date.day}>
+               <Date key={date.date + date.day} day={date.day}>
                   <p className="day">{date.day}</p>
                   <p className="date">{date.date}</p>
                </Date>
@@ -15,18 +15,9 @@ export default function DateOrderLists() {
          </Container>
 
          <Line />
-      </React.Fragment>
+      </>
    );
 }
-
-const Container = styled.div`
-   width: 100%;
-   display: flex;
-   margin-top: 30px;
-   overflow-x: scroll;
-   align-items: center;
-   padding-bottom: 2px;
-`;
 
 const activeDate = `
    font-weight: bold;
@@ -35,18 +26,27 @@ const activeDate = `
    padding: 9px 14px 9px 14px;
 `;
 
+const Container = styled.div`
+   width: 100%;
+   display: flex;
+   margin-top: 32px;
+   overflow-x: scroll;
+   align-items: center;
+   padding-bottom: 4px;
+`;
+
 const Date = styled.div`
    display: flex;
    cursor: pointer;
+   padding: 0 32px;
    align-items: center;
-   padding-inline: 26px;
    flex-direction: column;
    font-family: Arial, Helvetica, sans-serif;
    ${(props) => props.day === "SEL" && activeDate}
 
    .day {
       font-size: 14px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       color: ${(props) => (props.day === "SEL" ? "#ffffff;" : "#6e7679;")};
       opacity: ${(props) =>
          props.day === "SAB" || props.day === "MIN" ? "0.3" : "1"};
@@ -61,7 +61,7 @@ const Date = styled.div`
 `;
 
 const Line = styled.hr`
-   margin-top: 7px;
+   margin-top: 8px;
    background-color: #f1f1f2;
    border: 1px solid #f1f1f2;
 `;

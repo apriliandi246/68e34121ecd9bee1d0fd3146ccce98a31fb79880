@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { foods } from "../utils/utils";
 import Food from "./Food";
+import styled from "styled-components";
+import { foods } from "../dummy-data/data";
 
 export default function Foods() {
    return (
@@ -26,8 +26,6 @@ const Container = styled.div`
 
 const TitleDate = styled.h1`
    color: #424749;
-   font-size: 19px;
-   font-weight: bold;
-   margin-bottom: 18px;
-   font-family: Arial, Helvetica, sans-serif;
+   margin-bottom: 16px;
+   font: bold 18px Arial, Helvetica, sans-serif;
 `;

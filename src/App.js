@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import Foods from "./components/Foods";
 import Header from "./components/Header";
-import { mediaQueries } from "./utils/utils";
 import FoodsCart from "./components/FoodsCart";
 import ModalLocation from "./components/ModalLocation";
 import DateOrderLists from "./components/DateOrderLists";
@@ -18,11 +17,8 @@ export default function App() {
    const statusModal = useSelector(getStatusModal);
 
    useEffect(() => {
-      if (statusModal === false) {
-         document.body.style.overflow = "";
-      } else {
-         document.body.style.overflow = "hidden";
-      }
+      if (statusModal === false) document.body.style.overflow = "";
+      if (statusModal === true) document.body.style.overflow = "hidden";
    }, [statusModal]);
 
    return (
@@ -31,16 +27,16 @@ export default function App() {
          <DateOrderLists />
          <ButtonsEatingTime />
          <Foods />
-         {statusModal === true && <ModalLocation />}
+
          {statusCart === true && <FoodsCart />}
+         {statusModal === true && <ModalLocation />}
       </Container>
    );
 }
 
 const Container = styled.div`
-   width: 90%;
-   overflow-x: hidden;
+   padding-left: 16px;
+   padding-right: 16px;
    margin: 7px auto ${(props) => (props.statusCart === true ? "75px" : "10px")}
       auto;
-   ${mediaQueries}
 `;
