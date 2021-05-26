@@ -8,8 +8,9 @@ export default function DateOrderLists() {
          <Container>
             {dates.map((date) => (
                <Date key={date.date + date.day} day={date.day}>
-                  <p className="day">{date.day}</p>
-                  <p className="date">{date.date}</p>
+                  <button disabled={date.day === "SAB" || date.day === "MIN"}>
+                     {date.day} <br /> <span>{date.date}</span>
+                  </button>
                </Date>
             ))}
          </Container>
@@ -39,24 +40,27 @@ const Date = styled.div`
    display: flex;
    cursor: pointer;
    padding: 0 32px;
+   font-size: 14px;
    align-items: center;
    flex-direction: column;
-   font-family: Arial, Helvetica, sans-serif;
    ${(props) => props.day === "SEL" && activeDate}
 
-   .day {
-      font-size: 14px;
+   button {
+      border: none;
+      outline: none;
       margin-bottom: 4px;
+      background-color: transparent;
+      font-family: Arial, Helvetica, sans-serif;
       color: ${(props) => (props.day === "SEL" ? "#ffffff;" : "#6e7679;")};
-      opacity: ${(props) =>
-         props.day === "SAB" || props.day === "MIN" ? "0.3" : "1"};
    }
 
-   .date {
+   button:disabled {
+      opacity: 0.4;
+   }
+
+   span {
       font-weight: bold;
-      color: ${(props) => (props.day === "SEL" ? "#ffffff;" : "#6e7679;")};
-      opacity: ${(props) =>
-         props.day === "SAB" || props.day === "MIN" ? "0.3" : "1"};
+      font-family: Arial, Helvetica, sans-serif;
    }
 `;
 

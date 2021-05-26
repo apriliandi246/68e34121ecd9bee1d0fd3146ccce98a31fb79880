@@ -9,16 +9,25 @@ export default function ModalLocation() {
    return (
       <Container>
          <SearchLocation>
-            <CloseModal
+            <svg
+               width="26px"
+               height="26px"
+               fill="#000000"
+               viewBox="0 0 24 24"
+               className="close-icon"
+               xmlns="http://www.w3.org/2000/svg"
                onClick={() => dispatch(toggleModal({ status: false }))}
             >
-               X
-            </CloseModal>
+               <path d="M0 0h24v24H0z" fill="none" />
+               <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
 
-            <ModalTitle>Cek makanan yang tersedia di lokasi kamu!</ModalTitle>
+            <h1 className="search-location__title">
+               Cek makanan yang tersedia di lokasi kamu!
+            </h1>
 
             <InputSearchContainer>
-               <InputSearch placeholder="Masukkan Lokasi" />
+               <input type="text" placeholder="Masukkan Lokasi" />
 
                <svg
                   width="23px"
@@ -83,26 +92,24 @@ const SearchLocation = styled.div`
    background-color: #ffffff;
    padding: 25px 20px 0px 20px;
    border-radius: 10px 10px 0px 0px;
+
+   .close-icon {
+      float: right;
+      margin-top: 8px;
+      cursor: pointer;
+      margin-right: 8px;
+   }
+
+   .search-location__title {
+      margin-top: 60px;
+      line-height: 28px;
+      font: normal 20px Arial, Helvetica, sans-serif;
+   }
 `;
 
 const LocationContainer = styled.div`
    height: 400px;
    overflow-y: scroll;
-`;
-
-const CloseModal = styled.span`
-   float: right;
-   margin-top: 8px;
-   cursor: pointer;
-   margin-right: 8px;
-   font: bold 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; ;
-`;
-
-const ModalTitle = styled.h1`
-   margin-top: 50px;
-   line-height: 28px;
-   font: normal 20px Arial, Helvetica, sans-serif;
 `;
 
 const InputSearchContainer = styled.div`
@@ -117,16 +124,16 @@ const InputSearchContainer = styled.div`
       margin-left: 12px;
       position: absolute;
    }
-`;
 
-const InputSearch = styled.input`
-   width: 100%;
-   outline: none;
-   padding: 12px;
-   text-indent: 38px;
-   border-radius: 4px;
-   border: 1px solid #f1f1f2;
-   font: normal 16px Arial, Helvetica, sans-serif; ;
+   input {
+      width: 100%;
+      outline: none;
+      padding: 12px;
+      text-indent: 38px;
+      border-radius: 4px;
+      border: 1px solid #f1f1f2;
+      font: normal 16px Arial, Helvetica, sans-serif;
+   }
 `;
 
 const ResultLocation = styled.div`
@@ -138,7 +145,7 @@ const ResultLocation = styled.div`
    svg {
       padding: 4px;
       border-radius: 50%;
-      margin-right: 12px;
+      margin-right: 16px;
       background-color: #f0f0f1;
    }
 

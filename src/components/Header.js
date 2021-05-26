@@ -20,7 +20,7 @@ export default function Header() {
          </svg>
 
          <HeaderMenu>
-            <p>ALAMAT PENGANTARAN</p>
+            <h3>ALAMAT PENGANTARAN</h3>
 
             <h1 onClick={() => dispatch(toggleModal({ status: true }))}>
                Tokopedia Tower
@@ -43,12 +43,13 @@ export default function Header() {
 const Container = styled.div`
    display: flex;
    margin-top: 20px;
+   align-items: center; ;
 `;
 
 const HeaderMenu = styled.div`
    margin-left: 24px;
 
-   p {
+   h3 {
       color: #6e7679;
       margin-bottom: 4px;
       font: normal 12px Arial, Helvetica, sans-serif;

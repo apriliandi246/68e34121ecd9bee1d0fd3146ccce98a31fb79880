@@ -23,8 +23,8 @@ const slice = createSlice({
 const { showedTheCart, toggledModal, choosenFood } = slice.actions;
 
 export const getStatusFood = (state) => state.ui.statusFood;
-export const getStatusModal = (state) => state.ui.isModalShow;
 export const getStatusCart = (state) => state.ui.isCartShow;
+export const getStatusModal = (state) => state.ui.isModalShow;
 
 export const toggleModal = (status) => toggledModal(status);
 export const chooseFoodTime = (status) => choosenFood(status);

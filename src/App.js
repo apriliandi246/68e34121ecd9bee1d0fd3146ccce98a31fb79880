@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import Foods from "./components/Foods";
+import Food from "./components/FoodCard";
 import Header from "./components/Header";
 import { useSelector } from "react-redux";
+import { foods } from "./dummy-data/data";
 import FoodCart from "./components/FoodCart";
 import ModalLocation from "./components/ModalLocation";
 import DateOrderLists from "./components/DateOrderLists";
 import { getStatusCart, getStatusModal } from "./store/ui";
-import ButtonsEatingTime from "./components/ButtonsEatingTime";
+import EatTimeButton from "./components/EatTimeButton";
 
 export default function App() {
    const statusCart = useSelector(getStatusCart);
@@ -22,8 +23,11 @@ export default function App() {
       <Container statusCart={statusCart}>
          <Header />
          <DateOrderLists />
-         <ButtonsEatingTime />
-         <Foods />
+         <EatTimeButton />
+
+         {foods.map((food) => (
+            <Food key={food.name} food={food} />
+         ))}
 
          {statusCart === true && <FoodCart />}
          {statusModal === true && <ModalLocation />}
@@ -34,6 +38,6 @@ export default function App() {
 const Container = styled.div`
    padding-left: 16px;
    padding-right: 16px;
-   margin: 7px auto ${(props) => (props.statusCart === true ? "75px" : "10px")}
+   margin: 7px auto ${(props) => (props.statusCart === true ? "108px" : "12px")}
       auto;
 `;

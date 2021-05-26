@@ -13,7 +13,7 @@ export default function FoodsCart() {
             <h1>
                {totalFoods} Items | {currency.format(totalPrice)}
             </h1>
-            <p>Termasuk ongkos kirim</p>
+            <span>Termasuk ongkos kirim</span>
          </div>
 
          <div>
@@ -64,7 +64,7 @@ const Container = styled.div`
       font: bold 16px Arial, Helvetica, sans-serif;
    }
 
-   p {
+   span {
       color: #ffffff;
       font: normal 14px Arial, Helvetica, sans-serif;
    }
