@@ -8,7 +8,7 @@ export default function FoodsCart() {
    const totalPrice = useSelector(totalPriceOfProducts);
 
    return (
-      <Container>
+      <Container className="food-cart">
          <div>
             <h1>
                {totalFoods} Items | {currency.format(totalPrice)}

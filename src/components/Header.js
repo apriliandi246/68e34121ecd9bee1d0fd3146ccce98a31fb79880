@@ -22,7 +22,10 @@ export default function Header() {
          <HeaderMenu>
             <h3>ALAMAT PENGANTARAN</h3>
 
-            <h1 onClick={() => dispatch(toggleModal({ status: true }))}>
+            <h1
+               className="toggle-modal"
+               onClick={() => dispatch(toggleModal({ status: true }))}
+            >
                Tokopedia Tower
                <svg
                   width="30px"

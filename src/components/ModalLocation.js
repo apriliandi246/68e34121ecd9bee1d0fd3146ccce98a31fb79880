@@ -7,7 +7,7 @@ export default function ModalLocation() {
    const dispatch = useDispatch();
 
    return (
-      <Container>
+      <Container className="modal-location">
          <SearchLocation>
             <svg
                width="26px"
