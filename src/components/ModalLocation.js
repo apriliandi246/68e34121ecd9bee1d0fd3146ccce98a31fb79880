@@ -36,8 +36,8 @@ export default function ModalLocation() {
                {locations.map((location) => (
                   <ResultLocation key={Math.random()}>
                      <svg
-                        width="23px"
-                        height="23px"
+                        width="30px"
+                        height="30px"
                         fill="#a8adaf"
                         viewBox="0 0 24 24"
                         enableBackground="new 0 0 24 24"
@@ -93,10 +93,10 @@ const LocationContainer = styled.div`
 const CloseModal = styled.span`
    float: right;
    margin-top: 8px;
-   font-size: 22px;
    cursor: pointer;
-   margin-right: 5px;
-   font-family: Arial, Helvetica, sans-serif;
+   margin-right: 8px;
+   font: bold 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; ;
 `;
 
 const ModalTitle = styled.h1`
@@ -111,9 +111,9 @@ const InputSearchContainer = styled.div`
    margin-bottom: 35px;
 
    svg {
-      left: 0;
       top: 0;
-      margin-top: 12px;
+      left: 0;
+      margin-top: 11px;
       margin-left: 12px;
       position: absolute;
    }
@@ -123,10 +123,10 @@ const InputSearch = styled.input`
    width: 100%;
    outline: none;
    padding: 12px;
-   font-size: 16px;
-   text-indent: 30px;
+   text-indent: 38px;
    border-radius: 4px;
-   border: 1px solid #f1f1f2; ;
+   border: 1px solid #f1f1f2;
+   font: normal 16px Arial, Helvetica, sans-serif; ;
 `;
 
 const ResultLocation = styled.div`
@@ -136,7 +136,10 @@ const ResultLocation = styled.div`
    border-bottom: 1px solid #f1f1f2;
 
    svg {
+      padding: 4px;
+      border-radius: 50%;
       margin-right: 12px;
+      background-color: #f0f0f1;
    }
 
    h1 {

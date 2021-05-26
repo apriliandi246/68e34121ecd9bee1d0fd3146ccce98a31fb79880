@@ -40,16 +40,14 @@ const notActive = `
 const Container = styled.div`
    width: 100%;
    display: flex;
-   margin-top: 20px;
-   margin-bottom: 40px;
+   margin: 20px 0 40px 0;
    justify-content: center;
 
    button {
       outline: none;
       cursor: pointer;
-      font-size: 16px;
       padding: 8px 62px;
-      font-family: Arial, Helvetica, sans-serif;
+      font: normal 16px Arial, Helvetica, sans-serif;
    }
 
    .lunch-btn {

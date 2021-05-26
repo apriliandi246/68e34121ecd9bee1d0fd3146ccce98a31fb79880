@@ -21,6 +21,7 @@ export default function Header() {
 
          <HeaderMenu>
             <p>ALAMAT PENGANTARAN</p>
+
             <h1 onClick={() => dispatch(toggleModal({ status: true }))}>
                Tokopedia Tower
                <svg
@@ -46,21 +47,19 @@ const Container = styled.div`
 
 const HeaderMenu = styled.div`
    margin-left: 24px;
-   font-family: Arial, Helvetica, sans-serif;
 
    p {
       color: #6e7679;
-      font-size: 12px;
       margin-bottom: 4px;
+      font: normal 12px Arial, Helvetica, sans-serif;
    }
 
    h1 {
       display: flex;
       color: #424749;
-      font-size: 18px;
       cursor: pointer;
-      font-weight: bold;
       align-items: center;
+      font: bold 18px Arial, Helvetica, sans-serif;
    }
 
    svg {

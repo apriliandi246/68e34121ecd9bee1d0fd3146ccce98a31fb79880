@@ -1,6 +1,6 @@
+import styled from "styled-components";
 import { useSelector } from "react-redux";
 import currency from "../utils/currencyFormat";
-import styled, { keyframes } from "styled-components";
 import { totalItems, totalPriceOfProducts } from "../store/foods";
 
 export default function FoodsCart() {
@@ -43,16 +43,6 @@ export default function FoodsCart() {
    );
 }
 
-const animation = keyframes`
-   from {
-      top: 120%;
-   }
-
-   to {
-      top: 94.2%;
-   }
-`;
-
 const Container = styled.div`
    left: 0;
    right: 0;
@@ -67,7 +57,6 @@ const Container = styled.div`
    margin: 0 auto 20px auto;
    background-color: #a23530;
    justify-content: space-between;
-   animation: ${animation} 0.2s ease;
 
    h1 {
       color: #ffffff;
@@ -77,7 +66,6 @@ const Container = styled.div`
 
    p {
       color: #ffffff;
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
+      font: normal 14px Arial, Helvetica, sans-serif;
    }
 `;

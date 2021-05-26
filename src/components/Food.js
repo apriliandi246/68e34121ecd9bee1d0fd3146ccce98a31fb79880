@@ -24,7 +24,7 @@ export default function Food({ food }) {
                   <svg
                      width="18px"
                      height="18px"
-                     fill="#6e7679"
+                     fill="#ff232a"
                      viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg"
                   >
@@ -36,7 +36,7 @@ export default function Food({ food }) {
                   <svg
                      width="18px"
                      height="18px"
-                     fill="#6e7679"
+                     fill="#ff232a"
                      viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg"
                   >
@@ -48,7 +48,7 @@ export default function Food({ food }) {
                   <svg
                      width="18px"
                      height="18px"
-                     fill="#6e7679"
+                     fill="#ff232a"
                      viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg"
                   >
@@ -60,7 +60,7 @@ export default function Food({ food }) {
                   <svg
                      width="18px"
                      height="18px"
-                     fill="#6e7679"
+                     fill="#ff232a"
                      viewBox="0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg"
                   >
@@ -72,7 +72,7 @@ export default function Food({ food }) {
                   <svg
                      width="18px"
                      height="18px"
-                     fill="#6e7679"
+                     fill="#ff232a"
                      viewBox="0 0 24 24"
                      enableBackground="new 0 0 24 24"
                      xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +96,7 @@ export default function Food({ food }) {
 
             <div className="food__footer">
                <p className="food__price">{currency.format(food.price)}</p>
+
                <button className="food__add-btn" onClick={addItem}>
                   ADD <span className="food__add-icon">+</span>
                </button>
@@ -137,9 +138,8 @@ const FoodDesc = styled.div`
 
    .food__rating-number {
       color: #6e7679;
-      font-size: 18px;
       margin-right: 12px;
-      font-family: Arial, Helvetica, sans-serif;
+      font: normal 18px Arial, Helvetica, sans-serif;
    }
 
    .food__rating-star {
@@ -149,17 +149,14 @@ const FoodDesc = styled.div`
 
    .food__name {
       color: #424749;
-      font-size: 18px;
-      font-weight: bold;
       line-height: 23px;
       margin-bottom: 8px;
-      font-family: Arial, Helvetica, sans-serif;
+      font: bold 18px Arial, Helvetica, sans-serif;
    }
 
    .food__by {
       color: #6e7679;
-      font-size: 16px;
-      font-family: Arial, Helvetica, sans-serif;
+      font: normal 16px Arial, Helvetica, sans-serif;
    }
 
    .food__footer {
@@ -179,7 +176,6 @@ const FoodDesc = styled.div`
       outline: none;
       display: flex;
       color: #ffffff;
-      font-size: 18px;
       cursor: pointer;
       padding: 8px 32px;
       border-radius: 5px;
