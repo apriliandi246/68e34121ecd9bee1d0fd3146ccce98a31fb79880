@@ -109,6 +109,8 @@ const SearchLocation = styled.div`
 
 const LocationContainer = styled.div`
    height: 400px;
+   padding-left: 12px;
+   padding-right: 12px;
    overflow-y: scroll;
 `;
 
@@ -145,19 +147,17 @@ const ResultLocation = styled.div`
    svg {
       padding: 4px;
       border-radius: 50%;
-      margin-right: 16px;
+      margin-right: 14px;
       background-color: #f0f0f1;
    }
 
    h1 {
-      line-height: 22px;
       margin-bottom: 4px;
       font: normal 16px Arial, Helvetica, sans-serif;
    }
 
    p {
       color: #6e7679;
-      line-height: 18px;
       font: normal 14px Arial, Helvetica, sans-serif;
    }
 `;
